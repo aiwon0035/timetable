@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 要件定義
 
-## Getting Started
+## 技術要素
 
-First, run the development server:
+### フロントエンドのみの想定
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js
+- Typescript
+- TailwindCSS
+- Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ライブラリ
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ドラッグ&ドロップを実現するライブラリ
+  - dnd-kit?
+  - react-dnd?
+- 入力フォーム用のライブラリ
+  - React Hook Form
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 機能要件
 
-## Learn More
+| 機能                     | 詳細                                                                                                            |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| タイトルの編集           | 時間割のタイトルをクリックすれば編集でき、編集エリア以外をクリックすると保存される                              |
+| 日時の設定               | 1 行目で開始日を入れれば自動で 1 週間分の日付と曜日が入る                                                       |
+| タスクの追加             | 各コマにホバーするとグレーになり、クリックするとモーダルが出てタスクのタイトル・詳細・URL・場所・色を入力できる |
+| タスクの編集・削除       | タスクをクリックするとモーダルが出て編集 or 削除ができる                                                        |
+| タスクのコピー           | タスクをクリックするとモーダルが出て、右上の「・・・」からタスクをコピーできる                                  |
+| タスクの移動             | タスクをドラッグ&ドロップすると移動できる                                                                       |
+| タスクの編集の制御       | タスクが存在する場合は各コマにホバーしても何も起こらず、タスクのみクリックできる                                |
+| 各コマの時間を編集       | 1 番左の列をクリックすると、モーダルが出て「1 限:8:00~9:00」など各コマのタイトルと時間を追加・編集できる        |
+| 時間指定のないコマの追加 | モーダル内の「時間指定をしない」ボタンを押すことで、「放課」「掃除」など時間を表示しないコマを追加できる        |
+| コマの並び替え           | 1 番左の列にホバーすると並び替えアイコンが出て、横 1 列の並び替えができる                                       |
+| データの保存             | LocalStrage でデータを保存する                                                                                  |
 
-To learn more about Next.js, take a look at the following resources:
+## 今後追加したい機能
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- BGM 設定機能
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 参考資料
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+大学の時間割をカレンダーアプリで表示出来るようにするアプリを作った
+https://zenn.dev/mochi/articles/class-2-ical
