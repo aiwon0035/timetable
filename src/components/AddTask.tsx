@@ -118,7 +118,7 @@ const AddTask = ({ id, length }: PropsType) => {
                   <Controller
                     name="color"
                     control={control}
-                    defaultValue="blue.200"
+                    defaultValue="blue.100"
                     render={({ field }) => <SelectColor field={field} />}
                   />
                 </Flex>

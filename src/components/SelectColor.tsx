@@ -3,15 +3,10 @@ import {
   PopoverTrigger,
   PopoverContent,
   PopoverArrow,
-  PopoverCloseButton,
-  PopoverHeader,
-  Center,
   PopoverBody,
   SimpleGrid,
   Button,
-  Input,
 } from "@chakra-ui/react";
-import { UseControllerProps } from "react-hook-form";
 
 type FieldProps = {
   value: string;
@@ -30,7 +25,7 @@ const SelectColor: React.FC<{ field: FieldProps }> = ({ field }) => {
     "blue.100",
     "cyan.100",
     "purple.100",
-    "pink.100",
+    "#ffd0e5",
   ];
   return (
     <div>
@@ -48,7 +43,6 @@ const SelectColor: React.FC<{ field: FieldProps }> = ({ field }) => {
         </PopoverTrigger>
         <PopoverContent width="170px">
           <PopoverArrow />
-          <PopoverCloseButton color="gray" />
 
           <PopoverBody height="70px">
             <SimpleGrid columns={5} spacing={2}>
