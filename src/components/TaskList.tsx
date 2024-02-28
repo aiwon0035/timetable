@@ -10,9 +10,7 @@ const TaskList = ({ id }: { id: string }) => {
     <>
       <Flex direction={"column"} gap={2}>
         {todos.map((todo) => (
-          <>
-            <Task key={todo.uuid} props={todo} id={id} />
-          </>
+          <Task key={todo.uuid} props={todo} id={id} />
         ))}
       </Flex>
     </>

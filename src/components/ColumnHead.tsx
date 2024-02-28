@@ -89,7 +89,6 @@ const ColumnHead = ({ id }: { id: string }) => {
         <Alarm id={id} />
         <Input
           type="time"
-          defaultValue={columnHeadValue?.start}
           name="start"
           onChange={handleChange}
           value={columnHeadValue?.start}
@@ -99,7 +98,6 @@ const ColumnHead = ({ id }: { id: string }) => {
         <span className="rotate-90">〜</span>
         <Input
           type="time"
-          defaultValue={columnHeadValue?.end}
           name="end"
           onChange={handleChange}
           value={columnHeadValue?.end}
