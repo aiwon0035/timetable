@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import {
   DndContext,
   closestCenter,
@@ -59,6 +59,7 @@ function App() {
   }
 
   const { isDragging } = useSortable({ id: activeItem! });
+  const dndId = useId();
 
   return (
     <>
@@ -73,6 +74,7 @@ function App() {
           // ドラッグ中のIDを保存する
           setActiveId(event.active.id as number);
         }}
+        id={dndId}
       >
         <Box
           //ドラッグ中は横スクロールさせない
