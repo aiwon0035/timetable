@@ -1,14 +1,17 @@
 import { columnHeadAtom } from "@/atom/ColumnHeadAtom";
 import { useAtom, useAtomValue } from "jotai";
 import { useEffect, useRef, useState } from "react";
+import { utcToZonedTime } from "date-fns-tz";
 
 const Alarm = ({ id }: { id: string }) => {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState(
+    utcToZonedTime(new Date(), "Asia/Tokyo")
+  );
 
   useEffect(() => {
     // コンポーネントがマウントされたときと1秒ごとに現在の時間を更新する
     const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
+      setCurrentTime(utcToZonedTime(new Date(), "Asia/Tokyo"));
     }, 1000);
 
     // クリーンアップ関数でインターバルをクリアする

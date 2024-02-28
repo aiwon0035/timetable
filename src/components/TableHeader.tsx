@@ -7,8 +7,9 @@ import { Flex, Grid, Text } from "@chakra-ui/react";
 import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 import { atomWithStorage } from "jotai/utils";
 import { useAtom } from "jotai";
+import { utcToZonedTime } from "date-fns-tz";
 
-const date = new Date();
+const date = utcToZonedTime(new Date(), "Asia/Tokyo");
 const dateAtom = atomWithStorage("date", date);
 
 const TableHeader = () => {
@@ -20,7 +21,7 @@ const TableHeader = () => {
   const calculateWeekDates = (start: Date) => {
     const days = [];
     for (let i = 0; i < 7; i++) {
-      const currentDate = new Date(start);
+      const currentDate = utcToZonedTime(new Date(start), "Asia/Tokyo");
       currentDate.setDate(currentDate.getDate() + i);
       days.push({
         date: currentDate.toLocaleDateString(undefined, {
