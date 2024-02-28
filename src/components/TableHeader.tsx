@@ -8,7 +8,9 @@ import { CalendarIcon, EditIcon } from "@chakra-ui/icons";
 import { atomWithStorage } from "jotai/utils";
 import { useAtom } from "jotai";
 
-const date = new Date();
+const date = new Date(
+  Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
+);
 const dateAtom = atomWithStorage("date", date);
 
 const TableHeader = () => {

@@ -3,12 +3,18 @@ import { useAtom, useAtomValue } from "jotai";
 import { useEffect, useRef, useState } from "react";
 
 const Alarm = ({ id }: { id: string }) => {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState(
+    new Date(Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000)
+  );
 
   useEffect(() => {
     // コンポーネントがマウントされたときと1秒ごとに現在の時間を更新する
     const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
+      setCurrentTime(
+        new Date(
+          Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
+        )
+      );
     }, 1000);
 
     // クリーンアップ関数でインターバルをクリアする
