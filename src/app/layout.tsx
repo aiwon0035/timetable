@@ -7,8 +7,8 @@ import { Container } from "@chakra-ui/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "時間割型TODO管理アプリ",
-  description: "TODOリストを時間割で管理できるアプリ",
+  title: "時間割型タスク管理アプリ",
+  description: "タスクを時間割で管理できるアプリ",
 };
 
 export default function RootLayout({
